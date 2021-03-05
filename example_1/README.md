@@ -16,8 +16,9 @@ The circuit is as follows:
 - There should be a global RESET switch, which takes precedence to everything else.
 
 
-TODO: Add block-diagram of the circuit.
-TODO: Refactor code for a more modular approach
-TODO: add a waveform file to read with GTKWave
-TODO: Maybe add the synthesized schematic or block diagram
-TODO: Magic
+#### TODOs:
+- [ ] Add block-diagram of the circuit.
+- [ ] Refactor code for a more modular approach
+- [ ] add a waveform file to read with GTKWave
+- [ ] Maybe add the synthesized schematic or block diagram
+- [ ] Magic
