@@ -159,19 +159,19 @@ module shiftleds
     always@(posedge clock or posedge reset) begin
         if(reset) begin
 			// Reset state is R color
-            sel_color_led <= 3'b001; // Reseteo para prender solo el r
+            sel_color_led[3:1] <= 3'b001; // Reseteo para prender solo el r
         end
         else begin
 			// Same thing, I need to infer a register to check against
-            sel_color <= i_btn[3:1];
+            sel_color[3:1] <= i_btn[3:1];
 			// Depending on which button is pressed I HARDCODE the led color
 			// state.
 			// I don't need to worry about many button presses this way, it
 			// always will send the correct output color
-            sel_color_led <=   (i_btn[1] && (!sel_color[1])) ? 3'b001 :
-                               (i_btn[2] && (!sel_color[2])) ? 3'b010 :
-                               (i_btn[3] && (!sel_color[3])) ? 3'b100 :
-                               sel_color_led;
+            sel_color_led[3:1] <=   (i_btn[1] && (!sel_color[1])) ? 3'b001 :
+                                    (i_btn[2] && (!sel_color[2])) ? 3'b010 :
+                                    (i_btn[3] && (!sel_color[3])) ? 3'b100 :
+                                    sel_color_led[3:1];
         end
     end // always@ (posedge clock or posedge reset)
 
@@ -181,13 +181,13 @@ module shiftleds
 	// I check if the color is ON. If it is, I check which mode should be
 	// acting, if the shifting or the flash
 
-	assign o_led_r = (sel_color_led[0]) ?
+	assign o_led_r = (sel_color_led[1]) ?
 						((sel_SR_FS_led) ? flash : shiftreg) :
 						4'b0;
-	assign o_led_g = (sel_color_led[1]) ?
+	assign o_led_g = (sel_color_led[2]) ?
 						((sel_SR_FS_led) ? flash : shiftreg) :
 						4'b0;
-	assign o_led_b = (sel_color_led[2]) ?
+	assign o_led_b = (sel_color_led[3]) ?
 						((sel_SR_FS_led) ? flash : shiftreg) :
 						4'b0;
 

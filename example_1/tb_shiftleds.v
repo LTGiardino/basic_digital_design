@@ -50,36 +50,40 @@ module tb_shiftleds();
 		// This should probably be better off written on an external file
 
 		// Change mode. SR -> Flash
-		#1000 i_btn[0] = 1'b1;
-		#100  i_btn[0] = 1'b0;
+		#500 i_btn[0] = 1'b1;
+		#20  i_btn[0] = 1'b0;
 
 		// Enable RED color (this should already be enabled so nothing must
 		// happen)
-		#1000 i_btn[1] = 1'b1;
-		#100  i_btn[1] = 1'b0;
+		#500 i_btn[1] = 1'b1;
+		#20  i_btn[1] = 1'b0;
 
 		// Change mode. Flash -> SR
-		#1000 i_btn[0] = 1'b1;
-		#100  i_btn[0] = 1'b0;
+		#500 i_btn[0] = 1'b1;
+		#20  i_btn[0] = 1'b0;
 
 		// Enable GREEN color.
-		#1000 i_btn[2] = 1'b1;
-		#100  i_btn[2] = 1'b0;
+		#500 i_btn[2] = 1'b1;
+		#20  i_btn[2] = 1'b0;
+
+        // Switch count direction
+        #500 i_sw[3]   = 1'b1;
+        #20 i_sw[3]   = 1'b1;
 
 		// Change mode. SR -> Flash
-		#1000 i_btn[0] = 1'b1;
-		#100  i_btn[0] = 1'b0;
+		#500 i_btn[0] = 1'b1;
+		#20  i_btn[0] = 1'b0;
 
 		// Enable BLUE color
-		#1000 i_btn[3] = 1'b1;
-		#100  i_btn[3] = 1'b0;
+		#500 i_btn[3] = 1'b1;
+		#20  i_btn[3] = 1'b0;
 
 		// Change mode. Flash -> SR
-		#1000 i_btn[0] = 1'b1;
-		#100  i_btn[0] = 1'b0;
+		#500 i_btn[0] = 1'b1;
+		#20  i_btn[0] = 1'b0;
 
 		// Wait and finish
-		#1000 $finish;
+		#100 $finish;
 	end
 
 	// Select the clock frecuency 5clocks HIGH 5clocks LOW.
