@@ -5,6 +5,7 @@ This is a simple example aimed at learning basic usage of the Verilog HDL.
 (At it's heart, it tries to emulate the classic KITT headlights.)
 
 The circuit is as follows:
+
 - There are 4 RGB LED's. Each LED should run only one color at a time.
 - You can choose the color pressing a dedicated button for each color.
 - There are two modes of operation: Either flash all LEDs or sequentially turn them on.
@@ -15,8 +16,8 @@ The circuit is as follows:
 - There should be a global ENABLE switch.
 - There should be a global RESET switch, which takes precedence to everything else.
 
-
 #### TODOs:
+
 - [ ] Add block-diagram of the circuit.
 - [ ] Refactor code for a more modular approach
 - [ ] add a waveform file to read with GTKWave
